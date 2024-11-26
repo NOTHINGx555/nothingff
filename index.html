@@ -76,16 +76,17 @@
 </head>
 <body>
 
-    <div id="countdown">3</div>
+    <div id="countdown">2</div>
 
     <div id="buttonsContainer">
-        <button id="copyButton" class="button">Copy Script Super liga Score</button>
-        <button id="extraButton" class="button">Copy Script Dex</button>
-        <button id="openLinkButton" class="button">FR exp dow</button>
+        <button id="copyButton" class="button">Copy Script</button>
+        <button id="extraButton" class="button">Copy Dex</button>
+        <button id="openLinkButton" class="button">FR exp</button>
+        <button id="getKeyButton" class="button">Get Key</button> <!-- New Button -->
     </div>
 
     <script>
-        let countdownTime = 3;
+        let countdownTime = 2;
         let countdownInterval;
 
         // Start the countdown when the page loads
@@ -128,10 +129,16 @@
             });
         }
 
+        // New function to open the "Get Key" link
+        function getKey() {
+            window.open("https://nothingx555.github.io/MENU-HUB/", "_blank");
+        }
+
         // Set event listeners for the buttons
         document.getElementById('copyButton').addEventListener('click', copyText);
         document.getElementById('openLinkButton').addEventListener('click', openLink);
         document.getElementById('extraButton').addEventListener('click', extraAction);
+        document.getElementById('getKeyButton').addEventListener('click', getKey); // New button event listener
 
         // Start the countdown when the page loads
         window.onload = startCountdown;
