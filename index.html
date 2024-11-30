@@ -82,11 +82,10 @@
         <button id="copyButton" class="button">Copy Script super liga score</button>
         <button id="extraButton" class="button">Copy Script Dex</button>
         <button id="openLinkButton" class="button">FR 🙃</button>
-        <button id="getKeyButton" class="button">Get Key</button> <!-- New Button -->
     </div>
 
     <script>
-        let countdownTime = 2;
+        let countdownTime = 3;
         let countdownInterval;
 
         // Start the countdown when the page loads
@@ -110,7 +109,7 @@
 
         // Function to copy some text to clipboard
         function copyText() {
-            const text = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/NOTHINGx555/script-upload/refs/heads/main/NOTHING/NOTHINGJR/super%20liga%20score/script/lua/key/NOTHING/NOT%20BUG/fire.lua"))()';  // Use single quotes to wrap the string
+            const text = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/NOTHINGx555/-DD/refs/heads/main/NOTHING/script/super%20score%20liga%20/.lua"))()';  // Use single quotes to wrap the string
             navigator.clipboard.writeText(text).catch(function(err) {
                 console.error("Failed to copy the text: ", err);
             });
@@ -129,16 +128,11 @@
             });
         }
 
-        // New function to open the "Get Key" link
-        function getKey() {
-            window.open("https://nothingx555.github.io/MENU-HUB/", "_blank");
-        }
 
         // Set event listeners for the buttons
         document.getElementById('copyButton').addEventListener('click', copyText);
         document.getElementById('openLinkButton').addEventListener('click', openLink);
         document.getElementById('extraButton').addEventListener('click', extraAction);
-        document.getElementById('getKeyButton').addEventListener('click', getKey); // New button event listener
 
         // Start the countdown when the page loads
         window.onload = startCountdown;
