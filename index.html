@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/1307028181274071063/1316904300924108911/Nyx.png?ex=675cbe34&is=675b6cb4&hm=7c351295cc85f504e81b00576c3aa8540c7b73dfc68098fda484635b3a495ec3" type="image/png">
+
     <style>
         body {
-            background-color: #121212;
-            color: #FFFFFF;
+            background-color: #000000;  /* Set background to pure black */
+            color: #FFFFFF;  /* Set text color to white */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -16,31 +18,6 @@
             flex-direction: column;
             text-align: center;
             margin: 0;
-        }
-
-        #countdown {
-            font-size: 4em;
-            color: #FFFFFF;
-            margin-top: 20px;
-            animation: blackEffect 1s infinite alternate;
-        }
-
-        @keyframes blackEffect {
-            0% {
-                color: #FFFFFF;
-                text-shadow: 2px 2px 5px #000000;
-                transform: scale(1);
-            }
-            50% {
-                color: #000000;
-                text-shadow: 2px 2px 10px #FFFFFF;
-                transform: scale(1.1);
-            }
-            100% {
-                color: #FFFFFF;
-                text-shadow: 2px 2px 5px #000000;
-                transform: scale(1);
-            }
         }
 
         /* Button Styling */
@@ -69,14 +46,13 @@
             transform: translateY(2px);
         }
 
+        /* Hide buttons container */
         #buttonsContainer {
-            display: none;
+            display: block;
         }
     </style>
 </head>
 <body>
-
-    <div id="countdown">3</div>
 
     <div id="buttonsContainer">
         <button id="copyButton" class="button">Copy Script super liga score</button>
@@ -85,28 +61,6 @@
     </div>
 
     <script>
-        let countdownTime = 3;
-        let countdownInterval;
-
-        // Start the countdown when the page loads
-        function startCountdown() {
-            countdownInterval = setInterval(function () {
-                if (countdownTime > 0) {
-                    countdownTime--;
-                    document.getElementById('countdown').textContent = countdownTime;
-                } else {
-                    clearInterval(countdownInterval);
-                    document.getElementById('countdown').style.display = 'none'; // Hide countdown
-                    showButtons(); // Show buttons
-                }
-            }, 1000);
-        }
-
-        // Function to display the buttons after the countdown reaches 0
-        function showButtons() {
-            document.getElementById('buttonsContainer').style.display = 'block';
-        }
-
         // Function to copy some text to clipboard
         function copyText() {
             const text = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/NOTHINGx555/-DD/refs/heads/main/NOTHING/script/super%20score%20liga%20/.lua"))()';  // Use single quotes to wrap the string
@@ -117,7 +71,7 @@
 
         // Function to open the link in a new tab
         function openLink() {
-            window.open("https://download1334.mediafire.com/42jqkbr2iipgFVo99_EdL6p8aSC3YOSUiIA97Z8uEkNim830ThsD5ghiV1sqzbewiVrTnzdEa1uDuPQ-Ske9ljR1XJzOA7pMZhRg4lqe83CaFnI2mPGx2nojIat4yfHlPP4ckdP0dZLSYDAfXYnnBk8TJV-hhfJ3vY1OrP1-bQ/869urgc5tbmntqi/Nyx.exe", "_blank");
+            window.open("https://download1349.mediafire.com/pt8unv04krng4lKGSeg1s0yFr9LyL3z5TP9lXiPwT_RpgVPH2wVmI03oFlIG_l5728GI7Ie2gNs6C3_00KC1_P6FhtaK3vWOwdwP6zc3Ocl4qNiTtGAXP_9MvLH40sAM0XMjMfnBVwe-DQ7zLdkt9QipC8JtQakIadYHa8SDXuk/7859nard4kh30ce/Nyx+v2.exe", "_blank");
         }
 
         // Function for the extra button (customize as needed)
@@ -128,14 +82,10 @@
             });
         }
 
-
         // Set event listeners for the buttons
         document.getElementById('copyButton').addEventListener('click', copyText);
         document.getElementById('openLinkButton').addEventListener('click', openLink);
         document.getElementById('extraButton').addEventListener('click', extraAction);
-
-        // Start the countdown when the page loads
-        window.onload = startCountdown;
     </script>
 
 </body>
