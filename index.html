@@ -1,66 +1,238 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
     <link rel="icon" href="https://cdn.discordapp.com/attachments/1307028181274071063/1316904300924108911/Nyx.png?ex=675cbe34&is=675b6cb4&hm=7c351295cc85f504e81b00576c3aa8540c7b73dfc68098fda484635b3a495ec3" type="image/png">
-
     <style>
         body {
-            background-color: #000000;  /* Set background to pure black */
-            color: #FFFFFF;  /* Set text color to white */
+            margin: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            font-family: 'Arial', sans-serif;
-            flex-direction: column;
-            text-align: center;
-            margin: 0;
+            background-color: black;
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+            overflow: hidden;
+            position: relative;
+            perspective: 1000px;
         }
 
-        /* Button Styling */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: -1;
+        }
+
+        .key-container {
+            text-align: center;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid white;
+            box-shadow: 0 0 15px white;
+            max-width: 600px;
+            width: 90%;
+            transition: transform 0.1s, box-shadow 0.3s;
+            transform-style: preserve-3d;
+        }
+
+        .key-container:hover {
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+        }
+
+        .key-container h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .typewriter span {
+            display: inline-block;
+            font-size: 16px;
+            color: white;
+            letter-spacing: 1px;
+        }
+
         .button {
-            margin-top: 15px;
-            padding: 12px 25px;
-            background-color: transparent;
-            color: #FFFFFF;
-            border: 2px solid #FFFFFF;
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 1.2em;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
+            font-size: 16px;
+            transition: all 0.3s ease; /* Smooth transition for transform, background-color */
         }
 
-        /* Button hover effect */
         .button:hover {
-            background-color: #FFFFFF;
-            color: #121212;
-            transform: translateY(-3px);
+            background-color: #666;
+            transform: scale(1.1); /* Slight scale-up effect */
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3); /* Subtle shadow effect */
         }
 
-        /* Button active (click) effect */
-        .button:active {
-            transform: translateY(2px);
+        @media (max-width: 768px) {
+            .key-container {
+                padding: 15px;
+            }
+
+            .key-container h1 {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            .typewriter span {
+                font-size: 14px;
+            }
+
+            .button {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
         }
 
-        /* Hide buttons container */
-        #buttonsContainer {
-            display: block;
+        @media (max-width: 480px) {
+            .key-container {
+                padding: 10px;
+            }
+
+            .key-container h1 {
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+
+            .typewriter span {
+                font-size: 12px;
+            }
+
+            .button {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
         }
     </style>
 </head>
 <body>
-
-    <div id="buttonsContainer">
-        <button id="copyButton" class="button">Copy Script super liga score</button>
-        <button id="extraButton" class="button">Copy Script Dex</button>
-        <button id="openLinkButton" class="button">Nyx v2</button>
+    <div id="particles-js"></div>
+    <div class="key-container">
+        <h1>Menu</h1>
+        <div class="typewriter">
+            <span id="typewriter">over 1 scripts!</span>
+        </div>
+        <div id="buttonsContainer">
+            <button id="copyButton" class="button">Copy Script super liga score</button>
+            <button id="extraButton" class="button">Copy Script Dex</button>
+            <button id="openLinkButton" class="button">Nyx v2</button>
+        </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <script>
+        // Particles.js configuration
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.5
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        const messages = [
+            "nothingff",
+            "dex",
+            "super liga score"
+        ];
+        let currentMessage = 0;
+        let currentChar = 0;
+        let isDeleting = false;
+        const typewriterElement = document.getElementById('typewriter');
+
+        function type() {
+            const currentText = messages[currentMessage];
+            const displayText = isDeleting
+                ? currentText.substring(0, currentChar--)
+                : currentText.substring(0, currentChar++);
+
+            typewriterElement.textContent = displayText;
+
+            if (!isDeleting && currentChar === currentText.length) {
+                setTimeout(() => {
+                    isDeleting = true;
+                }, 2000);
+            } else if (isDeleting && currentChar === 0) {
+                isDeleting = false;
+                currentMessage = (currentMessage + 1) % messages.length;
+            }
+
+            const speed = isDeleting ? 50 : 100;
+            setTimeout(type, speed);
+        }
+
+        function startTypewriter() {
+            type();
+        }
+
+        startTypewriter();
+
         // Function to copy some text to clipboard
         function copyText() {
             const text = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/NOTHINGx555/-DD/refs/heads/main/NOTHING/script/super%20score%20liga%20/.lua"))()';  // Use single quotes to wrap the string
@@ -87,6 +259,5 @@
         document.getElementById('openLinkButton').addEventListener('click', openLink);
         document.getElementById('extraButton').addEventListener('click', extraAction);
     </script>
-
 </body>
 </html>
